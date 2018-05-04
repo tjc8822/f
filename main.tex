@@ -1,0 +1,436 @@
+\documentclass[9pt]{beamer}
+\usepackage{soul}
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+\usetheme{simple}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\newcommand{\hc}{\hat{c}}
+\newcommand{\hpi}{\hat{\pi}}
+\newcommand{\hbeta}{\hat{\beta}}
+\newcommand{\hphi}{\hat{\phi}}
+\newcommand{\hU}{\hat{U}}
+\newcommand{\ha}{\hat{a}}
+\newcommand{\hsigma}{\hat{\sigma}}
+\newcommand{\hv}{\hat{v}}
+\newcommand{\hR}{\hat{R}}
+\newcommand{\hK}{\hat{K}}
+\newcommand{\hM}{\hat{M}}
+\newcommand{\yt}{y^t}
+\newcommand{\ytp}{y^{t+1}}
+\newcommand{\zt}{z^t}
+\newcommand{\ztp}{z^{t+1}}
+\newcommand{\bewley}{\textit{Bewley model$\hspace{1.5mm}$}}
+\newcommand{\arrow}{\textit{Arrow model$\hspace{1.5mm}$}}
+\newcommand{\bond}{\textit{Bond model$\hspace{1.5mm}$}}
+\usepackage{amsmath}
+\definecolor{destacado}{HTML}{70291d} % gris oscuro
+  \definecolor{normal}{HTML}{797979}  % gris medio
+  \definecolor{fondo}{HTML}{e6e6e6}  % gris claro
+  \definecolor{background}{HTML}{fbfaf6}  % gris claro
+\makeatletter
+\def\th@mystyle{%
+    \normalfont % body font
+    \setbeamercolor{block title example}{bg=orange,fg=white}
+    \setbeamercolor{block body example}{bg=orange!20,fg=black}
+    \def\inserttheoremblockenv{exampleblock}
+  }
+\makeatother
+\theoremstyle{mystyle}
+\newtheorem*{remark}{Remark}
+
+
+% TODO: 
+%   position adjustement
+%   change colours
+%       
+
+% Watermark background (simple theme)
+
+
+
+\title{When is market incompleteness irrelevant for the price
+of aggregate risk (and when is it not)?}
+\subtitle{Krueger $\&$ Lustig 2010 JET}
+\date{\today}
+\author{Presented by Jincheng Tong}
+
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{What is this paper about}
+\begin{itemize}
+\item for a large class of incomplete market models with aggregate and idiosyncratic risks,  characterize the conditions under which 
+\vspace{5mm}
+\begin{itemize}
+\item equilibrium prices and quantities can be obtained from those in a \bewley with only idiosyncratic risk 
+\vspace{5mm}
+\item make contact to the aggregation literature
+\end{itemize}
+\vspace{5mm}
+\item given the equivalence results, heterogeneity does not matter for 
+\vspace{5mm}
+\begin{itemize}
+\item equity premium
+\vspace{5mm}
+\item wealth inequality over business cycles
+\end{itemize}
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Outline}
+\begin{enumerate}%[<+->]
+\item lay out the physical environment
+\vspace{5mm}
+\item consider a two-period example: full analytical solution to develop intuitions for main results
+\vspace{5mm}
+\item the infinite horizon version:
+\vspace{3mm}
+\begin{itemize}
+\item describe the stationary model with only idiosyncratic risk (\textit{Bewley model})
+\vspace{5mm}
+\item \arrow: with aggregate uncertainty,  agents can trade stock and Arrow securities
+\vspace{5mm}
+\item show how to construct allocations and prices in the \arrow using the solutions to the \textit{Bewley model}; analyze asset pricing implications
+\end{itemize}
+
+\end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Environment}
+\begin{itemize}%[<+->]
+\item aggregate shock $z_t$, idiosyncratic shock $y_t$, $s_t = (y_t,z_t),  s^t = (y^t,z^t)$ shocks follow a first order Markov process: $\pi(s^\prime|s)$
+\vspace{5mm}
+\item aggregate endowment $e_t(z^t)$, its growth rate $\lambda(z^{t+1}) = \frac{e_{t+1}(z^{t+1})}{e_{t}(z^{t})}$
+\vspace{5mm}
+\begin{itemize}
+\item assume that $\lambda(z^{t+1}) = \lambda(z_{t+1})$
+\end{itemize}
+\vspace{5mm}
+\item $\alpha(z_t)e_t(z^t)$ is capital income: a Lucas tree that yields $\alpha(z_t)e_t(z^t)$ as capital income 
+\vspace{5mm}
+\item $(1-\alpha(z_t))e_t(z^t)$ is labor income: individual labor income process $\{\eta_t\}$
+\begin{equation*}
+\eta_t(s^t) = (1-\alpha(z_t))e_t(z^t) \times \eta(y_t, z_t)
+\end{equation*}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{infinite horizon: key assumptions}
+\begin{itemize}
+\item independence of idiosyncratic shocks from aggregate conditions:\vspace{5mm} 
+\begin{itemize}
+\item individual labor endowment shares:  $\eta(y_t, z_t) = \eta(y_t)$
+\vspace{5mm}
+\item for the growth-adjusted probability 
+
+\begin{equation*}
+\hpi(s_{t+1}|s_t)=\psi(y_{t+1}|y_t)\hphi(z_{t+1}|z_t), \quad\text{and}\quad \hphi(z_{t+1}|z_t) = \frac{\phi(z_{t+1}|z_t)\lambda(z_{t+1})^{1-\gamma}}{\sum_{z_{t+1}}\phi(z_{t+1}|z_t)\lambda(z_{t+1})^{1-\gamma}}
+\end{equation*}
+\end{itemize}
+\vspace{2mm}
+\item aggregate endowment growth is i.i.d: $\phi(z_{t+1}|z_t)=\phi(z_{t+1})$
+\vspace{5mm} 
+\begin{itemize}
+\item $\hphi(z_{t+1}|z_t)=\hphi(z_{t+1})$, $\hbeta(z_t) = \hbeta$
+\end{itemize}
+\vspace{5mm}
+\item the labor income share $1-\alpha$ is constant
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\textit{the Bewley model}}
+\begin{itemize}
+\item no aggregate uncertainty; agents can trade stock and bond and one asset is redundant
+\vspace{2mm}
+\item agents maximize utility given budge constraints
+\begin{equation*}
+\hc_t(y^t) + \frac{\ha_t(y^t)}{\hR_t} + \hsigma_t(y^t)\hv_t = (1-\alpha)\eta(y_t) + \ha_{t-1}(y^{t-1})+\hsigma_{t-1}(y^{t-1})(\hv_t+\alpha)
+\end{equation*}
+\vspace{2mm}
+\item agents also face one of two types of borrowing constraints (or both)
+\begin{equation*}
+\begin{split}
+&\frac{\ha_t(\yt)}{\hR_t}+\hsigma_t(\yt)\hv_t\geq \hK_t(\yt)\quad \forall \yt \\
+&\ha_t(\yt) + \hsigma_t(\yt)(\hv_{t+1}+\alpha)\geq \hM_t(\yt)\quad \forall \yt
+\end{split}
+\end{equation*}
+\vspace{2mm}
+\item the two solvency constraints are identical in the \bewley but it will be useful in models with aggregate uncertainty 
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Stationary Equilibrium}
+\begin{itemize}
+\item a stationary equilibrium in the \bewley for some initial distribution $\Theta_0$ over $(\theta_0, y_0)$   consists of 
+\begin{itemize}
+\vspace{2mm}
+\item $(\hR,\hv)$
+\vspace{2mm}
+\item optimal household allocations: $\{ \hc_t(\theta_0,\yt),\ha_t(\theta_0,\yt), \hsigma_t(\theta_0,\yt)\}$
+\vspace{2mm}
+\item a time-invariant measure $\Theta$ over incomes shocks and financial wealth
+\end{itemize}
+\vspace{5mm}
+\item such that given prices, household choices are optimal and endowment, bonds and stock markets clear
+\vspace{5mm}
+\item without aggregate uncertainty, one asset is redundant because both have the same return
+\begin{itemize}
+\vspace{3mm}
+\item normalize the bond position to be 0: $\ha_t(\theta_0,\yt)=0$ 
+\end{itemize}
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\arrow} 
+\begin{itemize}
+\item with aggregate uncertainty: agents can trade shares of stocks and contingent claims on aggregate states
+\vspace{5mm}
+\item agents maximize utility given budget constraints
+\begin{equation*}
+c_t(s^t) + \sum_{z_{t+1}}a_t(s^t,z_{t+1})q_t(z^t,z_{t+1}) + \sigma_t(s^t)v_t(z^t)\leq\theta_t(s^t) 
+\end{equation*}
+\begin{equation*}
+\begin{split}
+ \theta_{t+1}(s^{t+1}) = (1-\alpha)&\eta(y_{t+1},z_{t+1})e_{t+1}z_{t+1} \\&+ a_t(s^t,z_{t+1}) + \sigma_t(s^t)[v_{t+1}(z^{t+1})+\alpha e_{t+1}(z_{t+1})]
+\end{split}
+\end{equation*}
+\vspace{3mm}
+\item solvency constraints: agents also face one of two types of borrowing constraints (or both)
+\begin{equation*}
+\begin{split}
+\sum_{z_{t+1}}a_t(s^t,z_{t+1})q_t(\zt,z_{t+1})+\sigma_t(s^t)v_t(\zt)\geq \hK_t(\yt)e_t(z^t)
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+a_t(s^t,z_{t+1})+\sigma_t(s^{t})[v_{t+1}(\ztp)+\alpha e_{t+1}(z_{t+1})]\geq \hM_t(\yt)e_{t+1}(z^{t+1})
+\end{split}
+\end{equation*}
+\vspace{5mm}
+\item can de-trend the \arrow by the aggregate endowment
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{equivalence results}
+\begin{theorem}
+If $\{ \hc_t(\theta_0,y^t), \ha_t(\theta_0,y^t), \hsigma_t(\theta_0,y^t)\}$ and $\{\hR_t, \hv_t\}$ is an equilibrium of the \bewley, then$ \{a_t(\theta_0,s^t,z_{t+1})), \sigma_t(\theta_0,s^t), c_t(\theta_0, s^t)\}$ and $\{q_t(z^t,z_{t+1}), v_t(z^t) \}$ is an equilibrium of the stochastically growing \arrow with
+\vspace{3mm}
+\begin{itemize}
+\item $c_t(\theta_0,s^t) = \hc(\theta_0,y^t)e_t(z^t)$
+\vspace{3mm}
+\item $\sigma_t(\theta_0,s^t)=\hsigma_t(\theta_0,y^t)$
+\vspace{3mm}
+\item $a_t(\theta_0, s^t, z_{t+1}) = \ha_t(\theta_0, y^t)e_{t+1}(z^{t+1})$
+\vspace{3mm}
+\item $v_t(z^t)=\hv_t e_t(z^t)$
+\vspace{3mm}
+\item $q_t(z^t, z_{t+1})= \frac{1}{\hR_t}\times \frac{\phi(z_{t+1})\lambda(z_{t+1})^{-\gamma}}{\sum_{z_{t+1}}\phi(z_{t+1})\lambda(z_{t+1})^{1-\gamma}}$
+\end{itemize}
+\end{theorem}
+\vspace{5mm}
+\begin{itemize}
+\item in a \textbf{de-trended} \arrow, its equilibrium allocations are identical to those in a stationary \bewley 
+\vspace{5mm}
+\item aggregate uncertainty does not interact with normalized wealth distribution
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{some properties of equilibrium price/allocations}
+\begin{itemize}
+
+\item note that in the de-trended \arrow, $\ha^{A}_t(\theta_0, s^t, z_{t+1}) = \ha_t(\theta_0,y^t) = 0$ 
+\vspace{5mm}
+\begin{itemize}
+\item  the position on state contingent asset is not contingent at all
+\end{itemize}
+\vspace{5mm}
+\item Also note that the pd ratio is constant: not surprising given constant capital income share, i.i.d aggregate shock and constant Sharpe ratio I am about to show
+\vspace{5mm}
+\item for the normalized \arrow, why do agents behave as if there is no aggregate uncertainty at all?
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Asset pricing results}
+\begin{itemize}
+\item By the equivalence results, the equilibrium state price density is 
+\begin{equation}
+q_t(z^t, z_{t+1})= \frac{1}{\hR_t\sum_{z_{t+1}}\phi(z_{t+1})\lambda(z_{t+1})^{1-\gamma}} \times\phi(z_{t+1})\lambda(z_{t+1})^{-\gamma}
+\end{equation}
+
+\vspace{3mm}
+\item the state price density in a representative agent economy:
+\begin{equation}
+q_t^{RA}(z^t,z_{t+1}) = {\phi(z_{t+1})\lambda(z_{t+1})^{-\gamma}}
+\end{equation}
+
+\vspace{3mm}
+\item  HJ bound immediately tells us that
+\vspace{3mm}
+\begin{itemize}
+\item Sharpe-ratio is identical in $\arrow$ and representative-agent economy 
+\vspace{3mm}
+\item risk-premium is constant
+\end{itemize}
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{other extensions}
+\begin{itemize}
+\item The equivalence results can be extended to an economy with aggregate uncertainty, in which agents can trade stock and one period un-contingent bond
+\vspace{3mm}
+\begin{itemize}
+\item not surprising given that in the \arrow, their positions on state contingent bonds already exhibit state-uncontingency
+\end{itemize}
+\vspace{3mm}
+\item relaxation of non-predictability in the aggregate state. Without solvency constraints, the asset pricing irrelevance results hold
+\vspace{3mm}
+\begin{itemize}
+\item can connect to earlier results documented in KS(1997) and KS(1998)
+\end{itemize}
+\vspace{3mm}
+\item permanent individual income shocks: all results go through
+\vspace{3mm}
+\item time-varying factor income shares: when the labor income has a second component as in the 2-period model, the results survive
+\end{itemize}
+\end{frame}
+\begin{frame}{A two-period example}
+\begin{itemize}
+\item agents all start with initial wealth $\theta_0$ (1 share of Lucas tree, 0 positions on Arrow securities), initial state $s_0 = (z_0, y_0)$
+\vspace{2mm}
+\item agent chooses $\{c_0(s_0), c_1(s^1) \}$, $\{ a_0(s_0, z_1=z_l), a_0(s_0, z_1=z_h)\}$ $\sigma_0$
+\vspace{2mm}
+\item $z_1\in\{z_l,z_h\}$, $y_1\sim \pi(y_1|z_1)$
+\end{itemize}
+\vspace{2mm}
+individual utility maximization problem:
+\begin{equation*}
+\begin{split}
+&\max\Bigg\{ u(c_0(s_0)) + \sum_{z_1}\sum_{y_1}\pi(y_1|z_1)\phi(z_1|z_0)u(c_1(s^1)) \Bigg\}\\
+s.t.& \quad c_0(s_0) + \sum_{z_1}a_0(s_0,z_1)q_0(z_0,z_1) + \sigma_0(s_0)v_0(z_0) = \theta_0\\
+& \quad c_1(s^1)=(1-\alpha(z_1))\eta(y_1,z_1)\lambda(z_1)e_0+a_0(s_0,z_1)+\sigma_0(s_0)\alpha \lambda(z_1)e_0, \forall z_1\in\{z_l, z_h\}\\
+\end{split}
+\end{equation*}
+market clearing: 
+\begin{equation*}
+\begin{split}
+&\int\sigma_0(s_0)d\Theta_0 = 1, \quad \int a_0(s_0,z_1)d\Theta_0 = 0, \forall z_1 \\
+&\int c_0(s_0)d\Theta_0 = e_0, \quad \int\sum_{y_1}c_1(s^1)\pi(y_1|z_1)d\Theta_0 = e_1(z_1), \forall z_1
+\end{split}
+\end{equation*}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{No-trade equilibrium and SDF}
+\begin{itemize}
+\item no initial heterogeneity: $\sigma_0(s_0)=1$, $a_0(s_0,z_1)=0$
+\vspace{5mm}
+\item $c_1(s^1) = [(1-\alpha(z_1))\eta(y_1,z_1)+\alpha(z_1)]e_1(z^1), \forall s^1$
+\vspace{5mm}
+\item the ratio of prices of Arrow securities in $z_h, z_l$
+\begin{equation}\label{2_period_incomplete_ratio_Arrow}
+\frac{q_0(z_0,z_h)}{q_0(z_0,z_l)} = \frac{\phi(z_h|z_0)}{\phi(z_l|z_0)}\times\frac{\sum_{y_1}\pi(y_1|z_h)m([(1-\alpha(z_h))\eta(y_1,z_h)+\alpha(z_h)]\lambda(z_h)e_0,e_0)}{\sum_{y_1}\pi(y_1|z_l)m([(1-\alpha(z_l))\eta(y_1,z_l)+\alpha(z_l)]\lambda(z_l)e_0,e_0)}
+\end{equation}
+\vspace{5mm}
+\item In the representative agent model, the ratio of Arrow securities' prices is
+\begin{equation}\label{2_period_RA_ratio_Arrow}
+\frac{q_0^{RA}(z_0,z_h)}{q^{RA}_0(z_0,z_l)} = \frac{\phi(z_h|z_0)}{\phi(z_l|z_0)}\times\frac{m(\lambda(z_h)e_0,e_0)}{m(\lambda(z_l)e_0,e_0)}
+\end{equation}
+\vspace{5mm}
+\item under what conditions: equation \ref{2_period_incomplete_ratio_Arrow} = \ref{2_period_RA_ratio_Arrow}$\quad$
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Irrelevance results in the two period example}
+\begin{enumerate}
+\item Independence of idiosyncratic shocks and aggregate shocks: 
+\vspace{3mm}
+\begin{itemize}
+\item  $\eta(y_1,z_1) = \eta(y_1)$
+\vspace{3mm}
+\item  $\pi(y_1|z_1)=\pi(y_1)$ \textbf{but this does not imply that $\pi(y_1|y_0)=\pi(y_1)$}
+\vspace{3mm}
+\item rule out the Counter-Cyclical cross-sectional variance of income shocks (CCV) mechanism as in CD
+\end{itemize}
+\vspace{3mm}
+\item constant capital income share: $\alpha(z_1) = \alpha$
+now  the ratio of IMRS is 
+\begin{equation}\label{2_period_intermiediate_step}
+\frac{\sum_{y_1}\pi(y_1)m([(1-\alpha)\eta(y_1)+\alpha])\lambda(z_h)e_0,e_0)}{\sum_{y_1}\pi(y_1)m([(1-\alpha)\eta(y_1)+\alpha])\lambda(z_l)e_0,e_0)}
+\end{equation}
+\vspace{3mm}
+\item homogeneity of period utility function: take CRRA utility as an example, equation \ref{2_period_intermiediate_step} becomes
+\begin{equation}
+\frac{\sum_{y_1}\pi(y_1)m([(1-\alpha)\eta(y_1)+\alpha]),1)\times \lambda(z_h)^{-\gamma}}{\sum_{y_1}\pi(y_1)m([(1-\alpha)\eta(y_1)+\alpha]),1)\times \lambda(z_l)^{-\gamma}} = \frac{\lambda(z_h)^{-\gamma}}{\lambda(z_l)^{-\gamma}}
+\end{equation}
+\end{enumerate}
+convexity of marginal utility function: market incompleteness raises the Arrow securities' prices in each state (proportionally), risk-free rate is lower 
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Robustness}
+\begin{itemize}
+\item solvency constraint: they consider solvency constraint of the following type and the irrelevance results go through as long as $K_1\leq\alpha$
+\begin{equation*}
+a_0(s_0,z_1) + \sigma_0(s_0)\alpha e_1(z^1) \geq K_1e_1(z^1)
+\end{equation*}
+\vspace{2mm}
+\item counter-cyclical labor income share: suppose individual labor endowment is given additively by
+\begin{equation*}
+\eta_1(s^1) = (1-\alpha)\eta(y_1,z_1)e_0\lambda(z_1) + (\alpha-\alpha(z_1))e_0\lambda(z_1)
+\end{equation*}
+\begin{itemize}
+\vspace{2mm}
+\item labor and capital income share offset each other: the irrelevance results still hold 
+\end{itemize}
+\vspace{2mm}
+\item preference heterogeneity:.....
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{What is missing in the 2-period example?}
+\begin{itemize}
+\item no trade equilibrium: neither stock trading nor bond trading market is operative 
+\vspace{5mm}
+\item no dispersion/variation in the wealth/consumption distribution
+\end{itemize}
+\vspace{5mm}
+for the infinite horizon economy: 
+\vspace{5mm}
+\begin{itemize}
+\item consider two different environments where 
+\vspace{2mm}
+\begin{enumerate}
+\item \textit{Arrow model}: agents can trade stock and state-contingent bonds  
+\vspace{2mm}
+\item \textit{Bond model} :  agents can trade stock and one-period state un-contingent bond
+\end{enumerate}
+\vspace{5mm}
+\item under some conditions, the equilibrium prices/allocations in both models can be constructed from those of a stationary $\textit{Bewley model}$ without aggregate uncertainty 
+\vspace{5mm}
+\item under the same set of conditions, the asset pricing irrelevant results hold for both economy 
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{infinite horizon: notations }
+\begin{itemize}
+\item transformation of the growth model into a stationary model as in Alvarez Jermann (2001)
+\begin{equation*}
+\hc(s^t) = \frac{c_t(s^t)}{e_t(z^t)}
+\end{equation*}
+\begin{itemize}
+\item growth-adjusted probabilities and discount factor
+\vspace{2mm}
+\begin{equation*}
+\hpi(s_{t+1}|s_t) = \frac{\pi(s_{t+1}|s_t)\lambda(z_{t+1})^{1-\gamma}}{\sum_{s_{t+1}}\pi(s_{t+1}|s_t)\lambda(z_{t+1})^{1-\gamma}}\quad \hbeta(s_t) = \beta\sum_{s_{t+1}}\pi(s_{t+1}|s_t)\lambda(z_{t+1})^{1-\gamma}
+\end{equation*}
+\item life-time utility
+\begin{equation*}
+\hU(\hc)(s^t) = u(\hc(s^t)) + \hbeta(s_t) \sum_{s_{t+1}}\hpi(s_{t+1}|s_t)\hU(\hc)(s^t,s_{t+1})
+\end{equation*}
+\end{itemize}
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{transcript}
+\end{document}
